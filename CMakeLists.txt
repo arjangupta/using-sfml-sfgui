@@ -49,4 +49,6 @@ include_directories(src)
 
 add_executable(example1 src/example1.cpp)
 
+target_include_directories(example1 PUBLIC ${SFML_INCLUDE_DIR} PUBLIC ${SFGUI_INCLUDE_DIR})
+
 target_link_libraries(example1 PUBLIC ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
