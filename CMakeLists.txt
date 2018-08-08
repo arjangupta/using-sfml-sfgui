@@ -20,6 +20,9 @@ if(OSX)
 elseif(LINUX)
 endif()
 
+# Allow CMake to find FindSFML.cmake & FindSFGUI.cmake
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH}) 
+
 # Find SFML 2.4
 find_package(SFML 2.4 REQUIRED graphics window system)
 if(NOT SFML_FOUND)
@@ -40,3 +43,6 @@ endif()
 
 include_directories(src)
 
+add_executable(example1 src/example1.cpp)
+
+target_link_libraries(example1 PUBLIC ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
