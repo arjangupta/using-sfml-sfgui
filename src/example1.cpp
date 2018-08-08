@@ -10,8 +10,8 @@ int main()
 
 	text.setCharacterSize(16);
 
-	sf::Window window;
+	sf::RenderWindow window;
 	window.draw(text);
-	
+
 	return 0;
 }
